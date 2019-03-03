@@ -13,6 +13,7 @@ var score = 0;
 
 
 $('.numberToMatch').text(numberToMatch);
+$('.score').text(score)
 
 var gem1=Math.floor(Math.random()*15+1);
 var gem2=Math.floor(Math.random()*15+1);
