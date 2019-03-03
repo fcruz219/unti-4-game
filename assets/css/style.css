@@ -3,30 +3,7 @@ body {
     background-size: cover;
 }
 
-#head-container {
-    background: white;
-    color: black;
-    width: 23%;
-    align-content: center;
-    text-align: center;
-    
-}
-h1 {
-    color: black;
-}
-
-#container {
-    background: white;
-    color: black;
-    width: 500px;
-}
-p {
-    padding:0 30 0 30;
-    color: black;
-    opacity: 1;
-}
-
-#number-container {
+.numberToMatch {
     color: white;
     background-color: black;
     font-size: 50px;
@@ -37,11 +14,25 @@ p {
 
 }
 
-.gem {
-    margin-top: 50px;
-    width: 23%;
-    background: white; 
-    padding: 30px;
-    max-width: 100px;
-    max-height: 100px;
+.gemimage {
+    max-width: 200px;
+    max-height: 200px;
+}
+.gems {
+    max-width: 814px;
+    background: white;
+    align-content: center;
+}
+#head-container {
+    background: white;
+    width: 263px;
+    margin-left: 40%;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0.5;
+}
+
+#container {
+    background: white;
 }

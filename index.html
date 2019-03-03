@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Crystal Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div id="head-container">
-    <h1>Crystals Collector!</h1>
-</div>
-<div id="container">
-    <p>You will be given an random number at the start of the game.</p>
-    
-    <p>There are four crystals below. By clicking one of the crystals you will add a specific amount of points to your total score.</p>
-    <p>You win the game by matching your total score to the random number below. You lose the game if your total score goes above the random number.</p>
-    
-    <p>The value of each crystal is hidden from you until you click on it.</p>
-    
-    <p>Each time when the game starts, the game will change the values of each crystal.</p>
-</div>
-<div id="number-container">
-    <div id="numbertoMatch"></div>
+        <h1>Crystals Collector!</h1>
+    </div>
+    <div id="container">
+        <p>You will be given an random number at the start of the game.</p>
 
-</div>
-<div id="winslose-container">
+        <p>There are four crystals below. By clicking one of the crystals you will add a specific amount of points to
+            your total score.</p>
+        <p>You win the game by matching your total score to the random number below. You lose the game if your total
+            score goes above the random number.</p>
 
-</div>
-<img class="gem" id="blue-gem" src="assets/images/blue-gem.png" alt="">
-<img class="gem" id="green-gem" src="assets/images/green-gem.png" alt="">
-<img class="gem" id="magenta-gem" src="assets/images/magenta-gem.png" alt="">
-<img class="gem" id="red-gem" src="assets/images/red-gem.png" alt="">
+        <p>The value of each crystal is hidden from you until you click on it.</p>
 
-<div id="total-score">
-    <p>Your total score is:</p>
-</div>
-<div id="score-container">
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+    </div>
+    <div class="game">
 
-</div>
-<script src="assets/javascript/main.js"></script>
+        <div>
+            <h2>Your goal:</h2>
+        </div>
+
+        <div>
+            <h2 class="numberToMatch"></h2>
+        </div>
+
+
+        <div class="gems">
+            <img src="assets/images/blue-gem.png" alt="" class="gemimage" id="blue">
+            <img src="assets/images/green-gem.png" alt="" class="gemimage" id="green">
+            <img src="assets/images/magenta-gem.png" alt="" class="gemimage" id="magenta">
+            <img src="assets/images/red-gem.png" alt="" class="gemimage" id="red">
+        </div>
+        <div class="total-score">
+            <p>Your current total:</p>
+            <h2 class="score"></h2>
+        </div>
+    </div>
+    <div class="WinLoss">
+            <p>Wins:
+        <span class="win"></span>
+            </p>
+
+            
+        <span class="loss"></span>
+    <p>Losses:
+        <span class="losses"></span>
+    </p>
+
+    </div>
+
+    <script src="assets/javascript/main.js"></script>
 </body>
+
 </html>

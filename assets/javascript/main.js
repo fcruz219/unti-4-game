@@ -1,60 +1,92 @@
 $(document).ready(function () {
 
-    crystals = [
-        {color: 'red'},
-        {color: 'green'},
-        {color: 'magenta'},
-        {color: 'blue'},
-    ]
-    var numberToMatch = 0;
-    var randomNumber = randomnumberGen();
-    var wins = 0;
-    var losses = 0;
-    var crystals;
+// Variables ------------------
+
+// The number for the user to match
+var numberToMatch = Math.floor(Math.random() * 100 + 19);
+//sets user wins
+var wins = 0;
+//sets user losses
+var losses = 0;
+//User score so far
+var score = 0;
 
 
-    function randomnumberGen() {
-        return Math.floor(Math.random() * 102) + 19;
+$('.numberToMatch').text(numberToMatch);
+
+var gem1=Math.floor(Math.random()*15+1);
+var gem2=Math.floor(Math.random()*15+1);
+var gem3=Math.floor(Math.random()*15+1);
+var gem4=Math.floor(Math.random()*15+1);
+
+$('.win').text(wins);
+$('.losses').text(losses);
+
+function resetGame() {
+    numberToMatch = Math.floor(Math.random() * 100 + 19);
+    // console.log(numberToMatch);
+    $('.numberToMatch').text(numberToMatch);
+    var gem1=Math.floor(Math.random()*15+1);
+    var gem2=Math.floor(Math.random()*15+1);
+    var gem3=Math.floor(Math.random()*15+1);
+    var gem4=Math.floor(Math.random()*15+1);
+    score = 0;
+    $('.score').text(score);
     }
-    // console.log(randomnumGen())
 
-    function randomNumCrystals() {
-        return {
-            bluegem: {
-                points: Math.floor(Math.random() * 13) + 1,
-            },
-            greengem: {
-                points: Math.floor(Math.random() * 13) + 1,
-            },
-            magentagem: {
-                points: Math.floor(Math.random() * 13) + 1,
-            },
-            redgem: {
-                points: Math.floor(Math.random() * 13) + 1,
-            }
+    function win() {
+        alert("You won! Play again?")
+        wins++;
+        $(".win").text(wins);
+        resetGame();
+    }
+
+    function lose() {
+        alert("You lost! Play again?")
+        losses++;
+        $(".losses").text(losses);
+        resetGame();
+    }
+
+    $('#blue').on('click', function(){
+        score = score + gem1;
+
+        $(".score").text(score);
+        if (score === numberToMatch) {
+            win();
+        } else if (score > numberToMatch) {
+            lose();
         }
-    }
+    })
+    $('#green').on('click', function(){
+        score = score + gem2;
 
-    $('.crystal').on("click", function() {
-        score += crystals[this.id].value;
+        $(".score").text(score);
+        if (score === numberToMatch) {
+            win();
+        } else if (score > numberToMatch) {
+            lose();
+        }
+    })
+    $('#magenta').on('click', function(){
+        score = score + gem3;
 
-        $('#score')
-    }
+        $(".score").text(score);
+        if (score === numberToMatch) {
+            win();
+        } else if (score > numberToMatch) {
+            lose();
+        }
+    })
+    $('#red').on('click', function(){
+        score = score + gem4;
 
-    // RESET GAME
-    function resetGame() {
-
-        crystals = randomNumCrystals();
-
-        randomNum = randomnumberGen();
-        $("#numbertoMatch").text(randomNumber);
-
-    }
-
-
-
-
-    resetGame();
-
+        $(".score").text(score);
+        if (score === numberToMatch) {
+            win();
+        } else if (score > numberToMatch) {
+            lose();
+        }
+    })
 
 })
