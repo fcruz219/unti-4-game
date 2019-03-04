@@ -11,18 +11,28 @@ var losses = 0;
 //User score so far
 var score = 0;
 
-
+//Writes text to html for the Number users need to math
 $('.numberToMatch').text(numberToMatch);
+//writes text to score section of html
 $('.score').text(score)
 
+
+// set random number for each gem in the game
 var gem1=Math.floor(Math.random()*15+1);
 var gem2=Math.floor(Math.random()*15+1);
 var gem3=Math.floor(Math.random()*15+1);
 var gem4=Math.floor(Math.random()*15+1);
 
+//writes text for wins and losses to html
 $('.win').text(wins);
 $('.losses').text(losses);
 
+
+//resets game, sets new random number to guess
+//writes new random number to guess
+//makes new random number for gems
+//sets score back to 0
+//writes score back to html
 function resetGame() {
     numberToMatch = Math.floor(Math.random() * 100 + 19);
     // console.log(numberToMatch);
@@ -35,20 +45,24 @@ function resetGame() {
     $('.score').text(score);
     }
 
+
+//sets the function to run when user wins
     function win() {
         alert("You won! Play again?")
         wins++;
         $(".win").text(wins);
         resetGame();
     }
-
-    function lose() {
+// sets the function to run when user loses
+    function lose() {s
         alert("You lost! Play again?")
         losses++;
         $(".losses").text(losses);
         resetGame();
     }
 
+    
+//sets the variables for when a user presses each gem
     $('#blue').on('click', function(){
         score = score + gem1;
 
