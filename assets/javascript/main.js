@@ -54,7 +54,7 @@ function resetGame() {
         resetGame();
     }
 // sets the function to run when user loses
-    function lose() {s
+    function lose() {
         alert("You lost! Play again?")
         losses++;
         $(".losses").text(losses);
